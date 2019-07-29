@@ -25,6 +25,7 @@
             "paypal": {
                 "username": "mapulu"
             }
+        }
 },
   "description": {
     "en": "Adds support for Abus Smart Home products",
