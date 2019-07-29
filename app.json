@@ -17,8 +17,15 @@
   "sdk": 2,
   "brandColor": "#ec1b24",
   "name": {
-    "en": "Abus"
+    "en": "ABUS",
+    "de": "ABUS"
   },
+      "contributing": {
+        "donate": {
+            "paypal": {
+                "username": "mapulu"
+            }
+},
   "description": {
     "en": "Adds support for Abus Smart Home products",
     "de": "Unterstützung für Abus Smart Home Produkte"
