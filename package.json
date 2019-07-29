@@ -1,0 +1,13 @@
+{
+  "name": "com.abus",
+  "version": "1.0.0",
+  "description": "Adds support for Abus Devices",
+  "main": "app.js",
+  "dependencies": {
+    "homey-meshdriver": "^1.2.32"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

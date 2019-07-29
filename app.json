@@ -1,0 +1,202 @@
+{
+  "id": "com.abus",
+  "version": "1.0.0",
+  "compatibility": ">=2.4.0",
+  "author": {
+    "name": "Martin P",
+    "email": "mapulu@t-online.de"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Martin P",
+        "email": "mapulu@t-online.de"
+      }
+    ]
+  },
+  "sdk": 2,
+  "brandColor": "#ec1b24",
+  "name": {
+    "en": "Abus"
+  },
+  "description": {
+    "en": "Adds support for Abus Smart Home products",
+    "de": "Unterstützung für Abus Smart Home Produkte"
+  },
+  "category": [
+    "security",
+    "appliances"
+  ],
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "drivers": [
+    {
+      "id": "SHBW10000",
+      "name": {
+        "en": "Multisensor",
+        "de": "Multisensor"
+      },
+      "zwave": {
+        "manufacturerId": 1027,
+        "productTypeId": 2,
+        "productId": [
+          1
+        ],
+        "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/3118/Anleitung%20SHBW10000%20EN_1_2.pdf",
+        "pid": 3118,
+        "imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-19016351",
+        "learnmode": {
+          "instruction": {
+            "en": "Press the Button on the device once. ",
+            "de": "Drücke einmal die Taste auf dem Gerät."
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Lifeline. All run-time reporting is addressed to this group. 1. Notification Report. 2. Multilevel Sensor Report Sensor will send Multilevel Sensor Report (Temperature, humidity, luminance) interval of 2 hours. 3. Battery Report. Sensor will send Battery Report when the battery level is low and the battery reports value is 0xFF. 4. Device Reset Locally.",
+              "de": "Lifeline. Alle Laufzeitberichte sind an diese Gruppe gerichtet. 1. Notification Report 2. Multilevel Sensor Report (Temperatur, Feuchte, Leuchtdichte) im Intervall von 2 Stunden. 3. Batteriebericht. Der Sensor sendet einen Batteriebericht, wenn der Batteriestand niedrig ist und der Wert für den Batteriebericht 0xFF ist. 4. Gerät lokal zurücksetzen."
+            }
+          },
+          "2": {
+            "hint": {
+              "en": "Send Basic Set when PIR trigger",
+              "de": "Sendet Basic Set wenn Bewegungsmelder auslöst"
+            }
+          }
+        }
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+        "alarm_motion",
+        "alarm_tamper"
+      ],
+      "images": {
+        "large": "/drivers/SHBW10000/assets/images/large.png",
+        "small": "/drivers/SHBW10000/assets/images/small.png"
+      }
+    },
+    {
+      "id": "SHHA10000",
+      "name": {
+        "en": "Wireless-Socket",
+        "de": "Funk-Steckdose"
+      },
+      "zwave": {
+        "manufacturerId": 1027,
+        "productTypeId": 3,
+        "productId": [
+          3
+        ],
+        "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/3144/Manual%20SHHA10000%20EN.pdf",
+        "pid": 3144,
+        "imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-18116297",
+        "learnmode": {
+          "instruction": {
+            "en": "Plug the Wireless-Socket into an outlet. The Status-LED is flashing. Press the Network-Button on the Socket once. The App will show if the Add device process was successful. The Status LED does not flash anymore but indicates if device is switched on or off. Repeat the inclusion process from step B if it was not successful. ",
+            "de": "Stecke den Plug in eine Steckdose. Die Status-LED blinkt. Drücke die Netzwerktaste an dem Plug einmal. Die App zeigt an, ob der Prozess Gerät hinzufügen erfolgreich war. Die Status-LED blinkt nicht mehr, sondern zeigt an, ob das Gerät ein- oder ausgeschaltet ist. Wiederholen den Aufnahmeprozess aus Schritt B, wenn er nicht erfolgreich war."
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Lifeline. All run-time reporting is addressed to this group. Only one node can be assigned to this association group. \nDefault: 1 (Homey's ID)",
+              "de": "Lifeline. Alle Laufzeitberichte sind an diese Gruppe gerichtet. Dieser Assoziationsgruppe kann nur ein Node zugeordnet werden. \nStandard: 1 (Homey's ID)"
+            }
+          }
+        }
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "/drivers/SHHA10000/assets/images/large.png",
+        "small": "/drivers/SHHA10000/assets/images/small.png"
+      }
+    },
+    {
+      "id": "SHRM10000",
+      "name": {
+        "en": "Smoke Detector",
+        "nl": "Rookmelder",
+        "de": "Rauchmelder"
+      },
+      "zwave": {
+        "manufacturerId": [
+          1027
+        ],
+        "productTypeId": [
+          2
+        ],
+        "productId": [
+          3
+        ],
+        "learnmode": {
+          "instruction": {
+            "en": "Press the reset button three times within 1.5 seconds. The led flashes green.",
+            "de": "Drücke die Reset-Taste innerhalb von 1,5 Sekunden dreimal. Die LED blinkt grün."
+          }
+        },
+        "associationGroups": [
+          1
+        ]
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_smoke",
+        "measure_battery"
+      ],
+      "images": {
+        "large": "/drivers/SHRM10000/assets/images/large.png",
+        "small": "/drivers/SHRM10000/assets/images/small.png"
+      }
+    },
+    {
+      "id": "SHSG10000",
+      "name": {
+        "en": "Indoor Siren",
+        "de": "Innensirene"
+      },
+      "zwave": {
+        "manufacturerId": 1027,
+        "productTypeId": 3,
+        "productId": [
+          0
+        ],
+        "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/3053/Manual%20SHSG10000%20EN.pdf",
+        "pid": 3053,
+        "imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-18096243",
+        "learnmode": {
+          "image": "/drivers/SHSG10000/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the Switch Button 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.\nIf add Process is successful, Green LED will turn off.",
+            "de": "Drücke die Schalter-Taste dreimal innerhalb von 1,5 Sekunden, die grüne LED blinkt dreimal innerhalb von 1 Sekunde. Wenn der Vorgang erfolgreich war, erlischt die grüne LED."
+          }
+        },
+        "associationGroups": [
+          1
+        ]
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_battery"
+      ],
+      "images": {
+        "large": "/drivers/SHSG10000/assets/images/large.png",
+        "small": "/drivers/SHSG10000/assets/images/small.png"
+      }
+    }
+  ]
+}

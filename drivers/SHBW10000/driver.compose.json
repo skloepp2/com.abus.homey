@@ -1,0 +1,50 @@
+{
+	"id": "SHBW10000",
+	"name": {
+		"en": "Multisensor",
+		"de": "Multisensor"
+	},
+	"zwave": {
+		"manufacturerId": 1027,
+		"productTypeId": 2,
+		"productId": [
+      1
+    ],
+		"productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/3118/Anleitung%20SHBW10000%20EN_1_2.pdf",
+		"pid": 3118,
+		"imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-19016351",
+		"learnmode": {
+			"instruction": {
+				"en": "Press the Button on the device once. ",
+				"de": "Drücke einmal die Taste auf dem Gerät."
+			}
+		},
+		"associationGroups": [
+      1
+    ],
+		"associationGroupsOptions": {
+			"1": {
+				"hint": {
+					"en": "Lifeline. All run-time reporting is addressed to this group. 1. Notification Report. 2. Multilevel Sensor Report Sensor will send Multilevel Sensor Report (Temperature, humidity, luminance) interval of 2 hours. 3. Battery Report. Sensor will send Battery Report when the battery level is low and the battery reports value is 0xFF. 4. Device Reset Locally.",
+					"de": "Lifeline. Alle Laufzeitberichte sind an diese Gruppe gerichtet. 1. Notification Report 2. Multilevel Sensor Report (Temperatur, Feuchte, Leuchtdichte) im Intervall von 2 Stunden. 3. Batteriebericht. Der Sensor sendet einen Batteriebericht, wenn der Batteriestand niedrig ist und der Wert für den Batteriebericht 0xFF ist. 4. Gerät lokal zurücksetzen."
+				}
+			},
+			"2": {
+				"hint": {
+					"en": "Send Basic Set when PIR trigger",
+					"de": "Sendet Basic Set wenn Bewegungsmelder auslöst"
+				}
+			}
+		}
+	},
+	"class": "sensor",
+	"capabilities": [
+		"measure_battery",
+    "alarm_motion",
+    "alarm_tamper"
+  ],
+	"images": {
+		"large": "{{driverAssetsPath}}/images/large.png",
+		"small": "{{driverAssetsPath}}/images/small.png"
+	}
+}

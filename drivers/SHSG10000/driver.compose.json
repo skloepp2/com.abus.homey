@@ -1,0 +1,36 @@
+{
+	"id": "SHSG10000",
+	"name": {
+		"en": "Indoor Siren",
+		"de": "Innensirene"
+	},
+	"zwave": {
+		"manufacturerId": 1027,
+		"productTypeId": 3,
+		"productId": [
+      0
+    ],
+		"productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/3053/Manual%20SHSG10000%20EN.pdf",
+		"pid": 3053,
+		"imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-18096243",
+		"learnmode": {
+			"image": "{{driverAssetsPath}}/learnmode.svg",
+			"instruction": {
+				"en": "Press the Switch Button 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.\nIf add Process is successful, Green LED will turn off.",
+				"de": "Drücke die Schalter-Taste dreimal innerhalb von 1,5 Sekunden, die grüne LED blinkt dreimal innerhalb von 1 Sekunde. Wenn der Vorgang erfolgreich war, erlischt die grüne LED."
+			}
+		},
+		"associationGroups": [
+      1
+    ]
+	},
+	"class": "other",
+	"capabilities": [
+    "onoff",
+		"measure_battery"
+  ],
+	"images": {
+		"large": "{{driverAssetsPath}}/images/large.png",
+		"small": "{{driverAssetsPath}}/images/small.png"
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"id": "SHRM10000",
+	"name": {
+		"en": "Smoke Detector",
+		"nl": "Rookmelder",
+		"de": "Rauchmelder"
+	},
+	"zwave": {
+		"manufacturerId": [
+      1027
+    ],
+		"productTypeId": [
+      2
+    ],
+		"productId": [
+      3
+    ],
+		"learnmode": {
+			"instruction": {
+				"en": "Press the reset button three times within 1.5 seconds. The led flashes green.",
+				"de": "Drücke die Reset-Taste innerhalb von 1,5 Sekunden dreimal. Die LED blinkt grün."
+			}
+		},
+		"associationGroups": [
+      1
+    ]
+	},
+	"class": "sensor",
+	"capabilities": [
+    "alarm_smoke",
+    "measure_battery"
+  ],
+	"images": {
+		"large": "{{driverAssetsPath}}/images/large.png",
+		"small": "{{driverAssetsPath}}/images/small.png"
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"id": "SHHA10000",
+	"name": {
+		"en": "Wireless-Socket",
+		"de": "Funk-Steckdose"
+	},
+	"zwave": {
+		"manufacturerId": 1027,
+		"productTypeId": 3,
+		"productId": [
+      3
+    ],
+		"productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/3144/Manual%20SHHA10000%20EN.pdf",
+		"pid": 3144,
+		"imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-18116297",
+		"learnmode": {
+			"instruction": {
+				"en": "Plug the Wireless-Socket into an outlet. The Status-LED is flashing. Press the Network-Button on the Socket once. The App will show if the Add device process was successful. The Status LED does not flash anymore but indicates if device is switched on or off. Repeat the inclusion process from step B if it was not successful. ",
+				"de": "Stecke den Plug in eine Steckdose. Die Status-LED blinkt. Drücke die Netzwerktaste an dem Plug einmal. Die App zeigt an, ob der Prozess Gerät hinzufügen erfolgreich war. Die Status-LED blinkt nicht mehr, sondern zeigt an, ob das Gerät ein- oder ausgeschaltet ist. Wiederholen den Aufnahmeprozess aus Schritt B, wenn er nicht erfolgreich war."
+			}
+		},
+		"associationGroups": [
+      1
+    ],
+		"associationGroupsOptions": {
+			"1": {
+				"hint": {
+					"en": "Lifeline. All run-time reporting is addressed to this group. Only one node can be assigned to this association group. \nDefault: 1 (Homey's ID)",
+					"de": "Lifeline. Alle Laufzeitberichte sind an diese Gruppe gerichtet. Dieser Assoziationsgruppe kann nur ein Node zugeordnet werden. \nStandard: 1 (Homey's ID)"
+				}
+			}
+		}
+	},
+	"class": "socket",
+	"capabilities": [
+		"onoff"
+	],
+	"images": {
+		"large": "{{driverAssetsPath}}/images/large.png",
+		"small": "{{driverAssetsPath}}/images/small.png"
+	}
+}
