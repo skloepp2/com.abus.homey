@@ -4,7 +4,7 @@
   "description": "Adds support for Abus Devices",
   "main": "app.js",
   "dependencies": {
-    "homey-meshdriver": "^1.2.32"
+    "homey-meshdriver": "^1.2.33"
   },
   "devDependencies": {},
   "scripts": {
