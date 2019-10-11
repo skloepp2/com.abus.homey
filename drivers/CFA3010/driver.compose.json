@@ -1,0 +1,39 @@
+{
+  "id": "door-lock",
+  "name": {
+    "en": "Door Lock",
+	"de": "Türschlossantrieb"
+  },
+  "class": "lock",
+  "capabilities": [
+    "locked",
+	"measure_battery"
+  ],
+  "energy": {
+    "batteries": [ "AA", "AA", "AA", "AA" ]
+  },
+  "images": {
+    "large": "/drivers/door-lock/assets/images/large.png",
+    "small": "/drivers/door-lock/assets/images/small.png"
+  },
+  "zwave": {
+    "manufacturerId": 1033,
+    "productTypeId": [
+      5
+    ],
+    "productId": [
+      3
+    ],
+    "zwaveAllianceProductId": 3230,
+    "associationGroups": [
+      1
+    ],
+    "associationGroupsOptions": {
+      "1": {
+        "hint": {
+          "en": "Z-Wave Plus Lifeline"
+        }
+      }
+    }
+  }
+}

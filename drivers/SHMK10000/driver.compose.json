@@ -11,6 +11,9 @@
     "alarm_contact",
     "alarm_tamper"
   ],
+  "energy": {
+    "batteries": [ "CR2" ]
+  },
   "images": {
     "large": "/drivers/SHMK10000/assets/images/large.png",
     "small": "/drivers/SHMK10000/assets/images/small.png"

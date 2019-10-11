@@ -27,7 +27,7 @@
 	"class": "other",
 	"capabilities": [
     "onoff",
-		"measure_battery"
+	"measure_battery"
   ],
 	"images": {
 		"large": "{{driverAssetsPath}}/images/large.png",

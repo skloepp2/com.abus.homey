@@ -11,6 +11,9 @@
     "alarm_water",
 	"alarm_tamper"
   ],
+  "energy": {
+    "batteries": [ "CR2" ]
+  },
   "images": {
     "large": "/drivers/SHWM10000/assets/images/large.png",
     "small": "/drivers/SHWM10000/assets/images/small.png"

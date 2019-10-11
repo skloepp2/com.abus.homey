@@ -1,0 +1,258 @@
+[
+  {
+    "id": "1",
+    "value": 3,
+    "label": {
+      "en": "Latch holding time",
+	  "de": "Falle-Haltezeit"
+    },
+    "hint": {
+      "en": "Current holding time of latch, settable to intervals of between 1 and 20 seconds.",
+	  "de": "Haltezeit der Falle einstellbar von 1 bis 20 Sekunden"
+    },
+    "zwave": {
+      "index": 1,
+      "size": 1
+    },
+    "attr": {
+      "min": 1,
+      "max": 20
+    },
+    "type": "number"
+  },
+  {
+    "id": "2",
+    "value": "2",
+    "label": {
+      "en": "Lact force",
+	  "de": "Falle-Kraft"
+    },
+    "hint": {
+      "en": "Setting of current torque during travel of latch",
+	  "de": "Die Einstellung des aktuellen Drehmoments während der Verriegelung"
+    },
+    "zwave": {
+      "index": 2,
+      "size": 1
+    },
+    "attr": {
+      "min": 1,
+      "max": 3
+    },
+    "values": [
+      {
+        "id": "1",
+        "label": {
+          "en": "Torque of the latch is high (max.)",
+          "de": "Das Drehmoment der Verriegelung ist hoch (max.)"
+        }
+      },
+      {
+        "id": "2",
+        "label": {
+          "en": "Torque of the latch is medium",
+          "de": "Das Drehmoment der Verriegelung ist mittel"
+        }
+      },
+      {
+        "id": "2",
+        "label": {
+          "en": "Torque of the latch is low (min.)",
+          "de": "Das Drehmoment der Verriegelung ist niedrig (min.)"
+        }
+      }
+    ],
+    "type": "dropdown"
+  },
+  {
+    "id": "250",
+    "value": 0,
+    "label": {
+      "en": "Lock status"
+    },
+    "hint": {
+      "en": "Status of lock: - 0 unknown - 1 open - 2 unlocked - 3 1x locked - 4 2x locked - 5 locked (end stop) - 6 multiple locking"
+    },
+    "zwave": {
+      "index": 250,
+      "size": 1
+    },
+    "attr": {
+      "min": 0,
+      "max": 127
+    },
+    "type": "number"
+  },
+  {
+    "id": "251",
+    "value": 1,
+    "label": {
+      "en": "Travel cycle latch"
+    },
+    "hint": {
+      "en": "Counter, how often latch was actuated"
+    },
+    "zwave": {
+      "index": 251,
+      "size": 1
+    },
+    "attr": {
+      "min": 0,
+      "max": 127
+    },
+    "type": "number"
+  },
+  {
+    "id": "252",
+    "value": 1,
+    "label": {
+      "en": "Travel cycles unlock"
+    },
+    "hint": {
+      "en": "Counter, how often travel in „Unlocked“ direction"
+    },
+    "zwave": {
+      "index": 252,
+      "size": 1
+    },
+    "attr": {
+      "min": 0,
+      "max": 127
+    },
+    "type": "number"
+  },
+  {
+    "id": "253",
+    "value": 1,
+    "label": {
+      "en": "Travel cycles locked"
+    },
+    "hint": {
+      "en": "Counter, how often travel in „Locked“ direction"
+    },
+    "zwave": {
+      "index": 253,
+      "size": 1
+    },
+    "attr": {
+      "min": 0,
+      "max": 127
+    },
+    "type": "number"
+  },
+  {
+    "id": "3",
+    "value": "3",
+    "label": {
+      "en": "Acoustic signal",
+	  "de": "Akustisches Signal"
+    },
+    "hint": {
+      "en": "Setting of acoustic signals. lowbattery and error/alarm signals cannot be changed",
+	  "de": "Einstellung der akustischen Signale. Niederbatterie und Fehler-/Alarmsignale können nicht geändert werden."
+    },
+    "zwave": {
+      "index": 3,
+      "size": 1
+    },
+    "attr": {
+      "min": 1,
+      "max": 5
+    },
+    "values": [
+      {
+        "id": "1",
+        "label": {
+          "en": "Acoustic signal is inactive",
+          "de": "alle Signale inaktiv"
+        }
+      },
+      {
+        "id": "2",
+        "label": {
+          "en": "Acoustic signal only at the beginning of the lock travel",
+          "de": "Signal nur bei Fahrtbeginn"
+        }
+      },
+      {
+        "id": "3",
+        "label": {
+          "en": "Acoustic signal when reaching the position of the event",
+          "de": "Signal bei Erreichen der Position Falle"
+        }
+      },
+      {
+        "id": "4",
+        "label": {
+          "en": "Acoustic signal when reaching the position Locked",
+          "de": "Signal bei Erreichen der Position Verriegelt"
+        }
+      },
+      {
+        "id": "5",
+        "label": {
+          "en": "Acoustic signal when reaching each end position",
+          "de": "Signal bei Erreichen jeder Endlage"
+        }
+      }
+    ],
+    "type": "dropdown"
+  },
+  {
+    "id": "4",
+    "value": 1,
+    "label": {
+      "en": "Travel path"
+    },
+    "hint": {
+      "en": "Current setting of travel path at drive that is intended and/ or allowed to be travelled: - 1 Automatic / normal (travel according to teach-in run parameters) - 2 in case of multiple locking only one locking action - 3 motor travel from window tilt position is allowed (ABUS FCA3000)"
+    },
+    "zwave": {
+      "index": 4,
+      "size": 1
+    },
+    "attr": {
+      "min": 1,
+      "max": 3
+    },
+    "type": "number"
+  },
+  {
+    "id": "5",
+    "value": 1,
+    "label": {
+      "en": "Touch field"
+    },
+    "hint": {
+      "en": "Current setting of touch field function: - 1 all active - 2 only operating buttons active - 3 all inactive - 4 only latch pull inactive"
+    },
+    "zwave": {
+      "index": 5,
+      "size": 1
+    },
+    "attr": {
+      "min": 1,
+      "max": 4
+    },
+    "type": "number"
+  },
+  {
+    "id": "6",
+    "value": 1,
+    "label": {
+      "en": "Bolt force"
+    },
+    "hint": {
+      "en": "Setting of current torque during travel of bolt: - 1 Automatic / normal (travel according to teach-in run parameters) - 2 maximum"
+    },
+    "zwave": {
+      "index": 6,
+      "size": 1
+    },
+    "attr": {
+      "min": 1,
+      "max": 2
+    },
+    "type": "number"
+  }
+]
