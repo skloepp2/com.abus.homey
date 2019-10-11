@@ -1,5 +1,5 @@
 {
-  "id": "door-lock",
+  "id": "CFA3010",
   "name": {
     "en": "Door Lock",
 	"de": "Türschlossantrieb"
@@ -13,8 +13,8 @@
     "batteries": [ "AA", "AA", "AA", "AA" ]
   },
   "images": {
-    "large": "/drivers/door-lock/assets/images/large.png",
-    "small": "/drivers/door-lock/assets/images/small.png"
+    "large": "/drivers/CFA3010/assets/images/large.png",
+    "small": "/drivers/CFA3010/assets/images/small.png"
   },
   "zwave": {
     "manufacturerId": 1033,
