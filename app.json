@@ -61,8 +61,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/door-lock/assets/images/large.png",
-        "small": "/drivers/door-lock/assets/images/small.png"
+        "large": "/drivers/CFA3010/assets/images/large.png",
+        "small": "/drivers/CFA3010/assets/images/small.png"
       },
       "zwave": {
         "manufacturerId": 1033,
