@@ -1,22 +1,27 @@
 {
-  "id": "SHWM10000",
   "name": {
     "en": "Waterleak Detector",
-	"de": "Wassermelder"
+    "de": "Wassermelder"
   },
   "class": "sensor",
   "capabilities": [
     "measure_battery",
     "alarm_battery",
-    "alarm_water",
-	"alarm_tamper"
+    "alarm_tamper",
+    "alarm_water"
   ],
   "energy": {
     "batteries": [ "CR2" ]
   },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zwave"
+  ],
   "images": {
-    "large": "/drivers/SHWM10000/assets/images/large.png",
-    "small": "/drivers/SHWM10000/assets/images/small.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "zwave": {
     "manufacturerId": 1027,
@@ -26,12 +31,6 @@
     "productId": [
       2
     ],
-  "learnmode": {
-    "instruction": {
-      "en": "Press the Tamper-button 3 times within 1.5 seconds and the Status-LED on the base unit front will flash 3 times.",
-	  "de": "Drück die Manipulationstaste dreimal innerhalb von 1,5 Sekunden und die Status-LED auf der Vorderseite der Basiseinheit blinkt dreimal."
-			}
-		},
     "zwaveAllianceProductId": 3091,
     "associationGroups": [
       1
@@ -39,34 +38,15 @@
     "associationGroupsOptions": {
       "1": {
         "hint": {
-          "en": "Lifeline association group - Maximum supported node is 1. Include command classes: Battery report, Notification report, and Device Reset Locally notification, Binary report.",
-		  "de": "Lifeline-Zuordnungsgruppe - Der maximal unterstützte Node ist 1 und beinhaltet Befehlsklassen: Battery report, Notification report und Device Reset Locally notification, Binary report."
-        }
-      },
-      "2": {
-        "hint": {
-          "en": "Root Device group(Binary Sensor) Maximum supported nodes are 5. Binary Sensor Command Class: Compatible with 300 series 1- Binary Sensor reports status of water or no water via Lifeline. 2- When the sensor detects status change between water and no water, the device will be triggered.",
-		  "de": "Root Device group(Binary Sensor) Maximal unterstützte Nodes sind 5. Binäre Sensorbefehlsklasse: Kompatibel mit der 300er Serie 1- Binärsensor meldet den Status von Wasser oder keinem Wasser über die Lifeline. 2- Wenn der Sensor einen Zustandswechsel zwischen Wasser und keinem Wasser erkennt, wird das Gerät ausgelöst."
-        }
-      },
-      "3": {
-        "hint": {
-          "en": "Root Device group(Binary Sensor) Maximum supported nodes are 5. Binary Sensor Command Class:Compatible with 300 series 1-Binary Sensor reports the removed status of water sensor. 2-When the sensor detects status change of tamper, the device will be triggered.",
-		  "de": "Root Device group(Binary Sensor) Maximal unterstützte Nodes sind 5. Binärsensor Befehlsklasse: Kompatibel mit 300 Serie 1 - Binärsensor meldet den entfernt Status des Wassersensors. 2 - Wenn der Sensor eine Statusänderung der Manipulation erkennt, wird das Gerät ausgelöst."
-        }
-      },
-      "4": {
-        "hint": {
-          "en": "Root Device group(Notification) Maximum supported nodes are 5. 1-Notification reports reports status of detect water or no water via Lifeline. 2-When the sensor detects status change between water and no water, the device will be triggered.",
-		  "de": "Root Device group(Notification) Maximal unterstützte Nodes sind 5. 1-Benachrichtigungsberichte melden den Status von erkanntem Wasser oder keinem Wasser über die Lifeline. 2 - Wenn der Sensor eine Zustandsänderung zwischen Wasser und keinem Wasser erkennt, wird das Gerät ausgelöst."
-        }
-      },
-      "5": {
-        "hint": {
-          "en": "Root Device group(Notification) Maximum supported nodes are 5. 1-Binary Sensor reports the removed status of water sensor. 2- When the sensor detects status change of tamper, the device will be triggered.",
-		  "de": "Root Device group(Notification) Maximal unterstützte Nodes sind 5. 1-Binär-Sensor meldet den entfernt Status des Wassersensors. 2- Wenn der Sensor eine Statusänderung der Manipulation erkennt, wird das Gerät ausgelöst."
+          "en": "Association group 1: Lifeline association group - Maximum supported node is 1. Include command classes: Battery report, Notification report, and Device Reset Locally notification, Binary report."
         }
       }
-    }
+    },
+    "learnmode": {
+			"instruction": {
+				"en": "Press the Switch Button 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.\nIf add Process is successful, Green LED will turn off.",
+				"de": "Drücke die Schalter-Taste dreimal innerhalb von 1,5 Sekunden, die grüne LED blinkt dreimal innerhalb von 1 Sekunde. Wenn der Vorgang erfolgreich war, erlischt die grüne LED."
+			}
+		}
   }
 }

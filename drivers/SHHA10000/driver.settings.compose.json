@@ -1,0 +1,250 @@
+[
+  {
+    "id": "1",
+    "value": true,
+    "label": {
+      "en": "Over current protection"
+    },
+    "hint": {
+      "en": ""
+    },
+    "zwave": {
+      "index": 1,
+      "size": 1
+    },
+    "type": "checkbox"
+  },
+  {
+    "id": "100",
+    "value": 0,
+    "label": {
+      "en": "Setting the parameters 101~104 to the default value."
+    },
+    "hint": {
+      "en": ""
+    },
+    "zwave": {
+      "index": 100,
+      "size": 1
+    },
+    "attr": {
+      "min": 85,
+      "max": 0
+    },
+    "type": "number"
+  },
+  {
+    "id": "101",
+    "value": 0,
+    "label": {
+      "en": "setting time for sending meter report (watt)"
+    },
+    "hint": {
+      "en": ""
+    },
+    "zwave": {
+      "index": 101,
+      "size": 4
+    },
+    "attr": {
+      "min": 5,
+      "max": 2678400
+    },
+    "type": "number"
+  },
+  {
+    "id": "102",
+    "value": 0,
+    "label": {
+      "en": "setting time for sending meter report (KWh)"
+    },
+    "hint": {
+      "en": ""
+    },
+    "zwave": {
+      "index": 102,
+      "size": 4
+    },
+    "attr": {
+      "min": 5,
+      "max": 2678400
+    },
+    "type": "number"
+  },
+  {
+    "id": "103",
+    "value": 0,
+    "label": {
+      "en": "setting time for sending meter report (voltage)"
+    },
+    "hint": {
+      "en": ""
+    },
+    "zwave": {
+      "index": 103,
+      "size": 4
+    },
+    "attr": {
+      "min": 5,
+      "max": 2678400
+    },
+    "type": "number"
+  },
+  {
+    "id": "104",
+    "value": 0,
+    "label": {
+      "en": "setting time for sending meter report (current)"
+    },
+    "hint": {
+      "en": ""
+    },
+    "zwave": {
+      "index": 104,
+      "size": 4
+    },
+    "attr": {
+      "min": 5,
+      "max": 2678400
+    },
+    "type": "number"
+  },
+  {
+    "id": "16",
+    "value": 0,
+    "label": {
+      "en": "The value represents min. change in wattage (in terms of wattage) for a meter report to be sent"
+    },
+    "hint": {
+      "en": ""
+    },
+    "zwave": {
+      "index": 16,
+      "size": 2
+    },
+    "attr": {
+      "min": 1,
+      "max": 32767
+    },
+    "type": "number"
+  },
+  {
+    "id": "17",
+    "value": 0,
+    "label": {
+      "en": "The value here represents minimum change in wattage percent (in terms of percentage) for a meter report (watt) to be sent"
+    },
+    "hint": {
+      "en": ""
+    },
+    "zwave": {
+      "index": 17,
+      "size": 2
+    },
+    "attr": {
+      "min": -128,
+      "max": 127
+    },
+    "type": "number"
+  },
+  {
+    "id": "2",
+    "value": "0",
+    "label": {
+      "en": "Setting device status after power failure\t"
+    },
+    "hint": {
+      "en": ""
+    },
+    "zwave": {
+      "index": 2,
+      "size": 1
+    },
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "Smart Plug memorizes its state after a power failure. (default)"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "Connected device will be on after the power supply is reconnected."
+        }
+      },
+      {
+        "id": "2",
+        "label": {
+          "en": "Connected device will be off after the power supply is reconnected."
+        }
+      }
+    ],
+    "type": "dropdown"
+  },
+  {
+    "id": "254",
+    "value": false,
+    "label": {
+      "en": "Enable/disable the configuration command"
+    },
+    "hint": {
+      "en": ""
+    },
+    "zwave": {
+      "index": 254,
+      "size": 1
+    },
+    "type": "checkbox"
+  },
+  {
+    "id": "3",
+    "value": "1",
+    "label": {
+      "en": "Notification when Load status changes"
+    },
+    "hint": {
+      "en": ""
+    },
+    "zwave": {
+      "index": 3,
+      "size": 1
+    },
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "function is disabled"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "send basic report (default)"
+        }
+      },
+      {
+        "id": "2",
+        "label": {
+          "en": "Send Basic report only when Load status is not changed by Z-Wave command"
+        }
+      }
+    ],
+    "type": "dropdown"
+  },
+  {
+    "id": "4",
+    "value": false,
+    "label": {
+      "en": "LED Load indicator mode selection"
+    },
+    "hint": {
+      "en": ""
+    },
+    "zwave": {
+      "index": 4,
+      "size": 1
+    },
+    "type": "checkbox"
+  }
+]

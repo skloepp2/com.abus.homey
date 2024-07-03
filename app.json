@@ -1,44 +1,39 @@
 {
-  "id": "com.abus",
-  "version": "1.0.2",
-  "compatibility": ">=2.4.0",
-  "author": {
-    "name": "Martin P",
-    "email": "mapulu@t-online.de"
-  },
-  "contributors": {
-    "developers": [
-      {
-        "name": "Martin P",
-        "email": "mapulu@t-online.de"
-      }
-    ]
-  },
-  "sdk": 2,
-  "brandColor": "#002f5c",
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.abus.homey",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "brandColor": "#fc0505",
   "name": {
-    "en": "ABUS",
-    "de": "ABUS"
+    "en": "ABUS for Homey Pro (2023)",
+    "de": "ABUS for Homey Pro (2023)"
+  },
+  "description": {
+    "en": "Adds support for ABUS Z-Wave devices for Homey Pro (2023)",
+    "de": "Unterstützung für ABUS Z-Wave Geräte für Homey Pro (2023)"
+  },
+  "category": [
+    "security"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "author": {
+    "name": "Sascha Krull",
+    "email": "s.krull@outlook.de"
   },
   "contributing": {
     "donate": {
       "paypal": {
-        "username": "mapulu"
+        "username": "edda132"
       }
     }
-  },
-  "description": {
-    "en": "Adds support for Abus Smart Home products",
-    "de": "Unterstützung für Abus Smart Home Produkte"
-  },
-  "category": [
-    "security",
-    "appliances"
-  ],
-  "permissions": [],
-  "images": {
-    "large": "/assets/images/large.png",
-    "small": "/assets/images/small.png"
   },
   "drivers": [
     {
@@ -49,8 +44,8 @@
       },
       "class": "lock",
       "capabilities": [
-        "locked",
-        "measure_battery"
+        "measure_battery",
+        "locked"
       ],
       "energy": {
         "batteries": [
@@ -60,9 +55,15 @@
           "AA"
         ]
       },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zwave"
+      ],
       "images": {
-        "large": "/drivers/CFA3010/assets/images/large.png",
-        "small": "/drivers/CFA3010/assets/images/small.png"
+        "small": "/drivers/CFA3010/assets/images/small.png",
+        "large": "/drivers/CFA3010/assets/images/large.png"
       },
       "zwave": {
         "manufacturerId": 1033,
@@ -82,6 +83,12 @@
               "en": "Z-Wave Plus Lifeline"
             }
           }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press the Switch Button 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.\nIf add Process is successful, Green LED will turn off.",
+            "de": "Drücke die Schalter-Taste dreimal innerhalb von 1,5 Sekunden, die grüne LED blinkt dreimal innerhalb von 1 Sekunde. Wenn der Vorgang erfolgreich war, erlischt die grüne LED."
+          }
         }
       },
       "settings": [
@@ -93,8 +100,8 @@
             "de": "Falle-Haltezeit"
           },
           "hint": {
-            "en": "Current holding time of latch, settable to intervals of between 1 and 20 seconds.",
-            "de": "Haltezeit der Falle einstellbar von 1 bis 20 Sekunden"
+            "en": "Current holding\r\ntime of latch,\r\nsettable to\r\nintervals of\r\nbetween 1 and\r\n20 seconds.",
+            "de": "Aktuelle Haltezeit der Falle, einstellbar in Sekunden-Schritten zwischen 1 und 20 Sek."
           },
           "zwave": {
             "index": 1,
@@ -108,14 +115,14 @@
         },
         {
           "id": "2",
-          "value": "2",
+          "value": 2,
           "label": {
             "en": "Lact force",
             "de": "Falle-Kraft"
           },
           "hint": {
-            "en": "Setting of current torque during travel of latch",
-            "de": "Die Einstellung des aktuellen Drehmoments während der Verriegelung"
+            "en": "Setting of\r\ncurrent torque\r\nduring travel of\r\nlatch\r\n- 1 high (max.)\r\n- 2 medium\r\n(standard)\r\n- 3 low\r\n(min.)",
+            "de": "Einstellung des aktuellen Drehmoments beim Fahren der Falle: - 1 hoch (max.) - 2 mittel (Standard) - 3 niedrig (min.)"
           },
           "zwave": {
             "index": 2,
@@ -125,39 +132,18 @@
             "min": 1,
             "max": 3
           },
-          "values": [
-            {
-              "id": "1",
-              "label": {
-                "en": "Torque of the latch is high (max.)",
-                "de": "Das Drehmoment der Verriegelung ist hoch (max.)"
-              }
-            },
-            {
-              "id": "2",
-              "label": {
-                "en": "Torque of the latch is medium",
-                "de": "Das Drehmoment der Verriegelung ist mittel"
-              }
-            },
-            {
-              "id": "2",
-              "label": {
-                "en": "Torque of the latch is low (min.)",
-                "de": "Das Drehmoment der Verriegelung ist niedrig (min.)"
-              }
-            }
-          ],
-          "type": "dropdown"
+          "type": "number"
         },
         {
           "id": "250",
           "value": 0,
           "label": {
-            "en": "Lock status"
+            "en": "Lock status",
+            "de": "Schloss-Status"
           },
           "hint": {
-            "en": "Status of lock: - 0 unknown - 1 open - 2 unlocked - 3 1x locked - 4 2x locked - 5 locked (end stop) - 6 multiple locking"
+            "en": "Status of lock:\r\n- 0 unknown\r\n- 1 open\r\n- 2 unlocked\r\n- 3 1x locked\r\n- 4 2x locked\r\n- 5 locked\r\n(end stop)\r\n- 6 multiple\r\nlocking",
+            "de": "Status des Schlosses: - 0 unbekannt - 1 geöffnet - 2 entriegelt - 3 1x verriegelt - 4 2x verriegelt - 5 verriegelt (Endanschlag) - 6 mehrfach verriegelt"
           },
           "zwave": {
             "index": 250,
@@ -173,10 +159,12 @@
           "id": "251",
           "value": 1,
           "label": {
-            "en": "Travel cycle latch"
+            "en": "Travel cycle latch",
+            "de": "Fahrzyklen-Falle"
           },
           "hint": {
-            "en": "Counter, how often latch was actuated"
+            "en": "Counter, how\r\noften latch was\r\nactuated",
+            "de": "Zähler, wie oft die Falle betätigt wurde."
           },
           "zwave": {
             "index": 251,
@@ -192,10 +180,12 @@
           "id": "252",
           "value": 1,
           "label": {
-            "en": "Travel cycles unlock"
+            "en": "Travel cycles unlock",
+            "de": "Fahrzyklen entriegelt"
           },
           "hint": {
-            "en": "Counter, how often travel in „Unlocked“ direction"
+            "en": "Counter, how\r\noften travel in\r\n„Unlocked“\r\ndirection",
+            "de": "Zähler, wie oft in Richtung „Entriegelt“ gefahren wurde"
           },
           "zwave": {
             "index": 252,
@@ -211,10 +201,12 @@
           "id": "253",
           "value": 1,
           "label": {
-            "en": "Travel cycles locked"
+            "en": "Travel cycles locked",
+            "de": "Fahrzyklenverriegelt"
           },
           "hint": {
-            "en": "Counter, how often travel in „Locked“ direction"
+            "en": "Counter, how\r\noften travel in\r\n„Locked“\r\ndirection",
+            "de": "Zähler, wie oft in Richtung „Verriegelt“ gefahren wurde."
           },
           "zwave": {
             "index": 253,
@@ -227,15 +219,36 @@
           "type": "number"
         },
         {
+          "id": "254",
+          "value": 1,
+          "label": {
+            "en": "ABUS Firmware version",
+            "de": "ABUS Firmware Version"
+          },
+          "hint": {
+            "en": "Display ABUS\r\nfirmware version,\r\ne.g. 1.05",
+            "de": "Anzeige der ABUS Firmware-Version, z.B. 1.05"
+          },
+          "zwave": {
+            "index": 254,
+            "size": 2
+          },
+          "attr": {
+            "min": 0,
+            "max": 127
+          },
+          "type": "number"
+        },
+        {
           "id": "3",
-          "value": "3",
+          "value": 3,
           "label": {
             "en": "Acoustic signal",
             "de": "Akustisches Signal"
           },
           "hint": {
-            "en": "Setting of acoustic signals. lowbattery and error/alarm signals cannot be changed",
-            "de": "Einstellung der akustischen Signale. Niederbatterie und Fehler-/Alarmsignale können nicht geändert werden."
+            "en": "Setting of\r\nacoustic signals\r\nto the following\r\nvalues:\r\n- 1 all signals\r\ninactive\r\n- 2 signal only\r\nat start of\r\ntravel\r\n- 3 signal when\r\nlatch position\r\nis reached\r\n- 4 signal when\r\nlocked position\r\nis reached\r\n- 5 signal when\r\nend position\r\nis reached\r\nButton, lowbattery\r\nand\r\nerror/alarm\r\nsignals cannot\r\nbe changed.",
+            "de": "Einstellung der akustischen Signale in den Werten: - 1 alle Signale inaktiv - 2 Signal nur bei Fahrtbeginn - 3 Signal bei Erreichen der Position Falle - 4 Signal bei Erreichen der Position Verriegelt - 5 Signal bei Erreichen jeder Endlage Tasten-, LowBattery- und Fehler- bzw. Alarmsignale sind nicht änderbar."
           },
           "zwave": {
             "index": 3,
@@ -245,53 +258,18 @@
             "min": 1,
             "max": 5
           },
-          "values": [
-            {
-              "id": "1",
-              "label": {
-                "en": "Acoustic signal is inactive",
-                "de": "alle Signale inaktiv"
-              }
-            },
-            {
-              "id": "2",
-              "label": {
-                "en": "Acoustic signal only at the beginning of the lock travel",
-                "de": "Signal nur bei Fahrtbeginn"
-              }
-            },
-            {
-              "id": "3",
-              "label": {
-                "en": "Acoustic signal when reaching the position of the event",
-                "de": "Signal bei Erreichen der Position Falle"
-              }
-            },
-            {
-              "id": "4",
-              "label": {
-                "en": "Acoustic signal when reaching the position Locked",
-                "de": "Signal bei Erreichen der Position Verriegelt"
-              }
-            },
-            {
-              "id": "5",
-              "label": {
-                "en": "Acoustic signal when reaching each end position",
-                "de": "Signal bei Erreichen jeder Endlage"
-              }
-            }
-          ],
-          "type": "dropdown"
+          "type": "number"
         },
         {
           "id": "4",
           "value": 1,
           "label": {
-            "en": "Travel path"
+            "en": "Travel path",
+            "de": "Fahrweg"
           },
           "hint": {
-            "en": "Current setting of travel path at drive that is intended and/ or allowed to be travelled: - 1 Automatic / normal (travel according to teach-in run parameters) - 2 in case of multiple locking only one locking action - 3 motor travel from window tilt position is allowed (ABUS FCA3000)"
+            "en": "Current setting\r\nof travel path\r\nat drive that is\r\nintended and/\r\nor allowed to\r\nbe travelled:\r\n- 1 Automatic /\r\nnormal\r\n(travel\r\naccording to\r\nteach-in run\r\nparameters)\r\n- 2 in case of\r\nmultiple locking\r\nonly\r\none locking\r\naction\r\n- 3 motor travel\r\nfrom window\r\ntilt position\r\nis allowed\r\n(ABUS\r\nFCA3000)",
+            "de": "Aktuelle Einstellung des Fahrwegs am Antrieb, welcher gefahren werden soll bzw. darf. - 1 Automatik / Normal (Fahren nach Lernfahrt-Parametern) - 2 bei Mehrfachverriegelung nur eine Schließung - 3 Motorfahrt aus Fenster-Kippstellung heraus ist erlaubt (ABUS  FCA3000)"
           },
           "zwave": {
             "index": 4,
@@ -307,10 +285,12 @@
           "id": "5",
           "value": 1,
           "label": {
-            "en": "Touch field"
+            "en": "Touch field",
+            "de": "Touch-Feld"
           },
           "hint": {
-            "en": "Current setting of touch field function: - 1 all active - 2 only operating buttons active - 3 all inactive - 4 only latch pull inactive"
+            "en": "Current setting\r\nof touch field\r\nfunction:\r\n- 1 all active\r\n- 2 only operating\r\nbuttons\r\nactive\r\n- 3 all inactive\r\n- 4 only latch\r\npull inactive",
+            "de": "Aktuelle Einstellung der Touchfeld-Funktion: - 1 alle aktiv - 2 nur Bedientasten aktiv - 3 alle inaktiv - 4 nur Fallenzug inaktiv"
           },
           "zwave": {
             "index": 5,
@@ -326,10 +306,12 @@
           "id": "6",
           "value": 1,
           "label": {
-            "en": "Bolt force"
+            "en": "Bolt force",
+            "de": "Riegel-Kraft"
           },
           "hint": {
-            "en": "Setting of current torque during travel of bolt: - 1 Automatic / normal (travel according to teach-in run parameters) - 2 maximum"
+            "en": "Setting of\r\ncurrent torque\r\nduring travel of\r\nbolt:\r\n- 1 Automatic /\r\nnormal\r\n(travel\r\naccording to\r\nteach-in run\r\nparameters)\r\n- 2 maximum",
+            "de": "Einstellung des aktuellen Drehmoments beim Fahren des Riegels: - 1 Automatik / Normal (Fahren nach Lernfahrt-Parametern) - 2 Maximum"
           },
           "zwave": {
             "index": 6,
@@ -344,104 +326,624 @@
       ]
     },
     {
-      "id": "SHBW10000",
       "name": {
         "en": "Multisensor",
         "de": "Multisensor"
       },
-      "zwave": {
-        "manufacturerId": 1027,
-        "productTypeId": 2,
-        "productId": [
-          1
-        ],
-        "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/3118/Anleitung%20SHBW10000%20EN_1_2.pdf",
-        "pid": 3118,
-        "imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-19016351",
-        "learnmode": {
-          "instruction": {
-            "en": "Press the Button on the device once. ",
-            "de": "Drücke einmal die Taste auf dem Gerät."
-          }
-        },
-        "associationGroups": [
-          1
-        ],
-        "associationGroupsOptions": {
-          "1": {
-            "hint": {
-              "en": "Lifeline. All run-time reporting is addressed to this group. 1. Notification Report. 2. Multilevel Sensor Report Sensor will send Multilevel Sensor Report (Temperature, humidity, luminance) interval of 2 hours. 3. Battery Report. Sensor will send Battery Report when the battery level is low and the battery reports value is 0xFF. 4. Device Reset Locally.",
-              "de": "Lifeline. Alle Laufzeitberichte sind an diese Gruppe gerichtet. 1. Notification Report 2. Multilevel Sensor Report (Temperatur, Feuchte, Leuchtdichte) im Intervall von 2 Stunden. 3. Batteriebericht. Der Sensor sendet einen Batteriebericht, wenn der Batteriestand niedrig ist und der Wert für den Batteriebericht 0xFF ist. 4. Gerät lokal zurücksetzen."
-            }
-          },
-          "2": {
-            "hint": {
-              "en": "Send Basic Set when PIR trigger",
-              "de": "Sendet Basic Set wenn Bewegungsmelder auslöst"
-            }
-          }
-        }
-      },
       "class": "sensor",
       "capabilities": [
         "measure_battery",
+        "measure_humidity",
+        "measure_luminance",
         "alarm_motion",
-        "alarm_tamper"
+        "alarm_tamper",
+        "measure_temperature"
       ],
       "energy": {
         "batteries": [
           "CR123A"
         ]
       },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zwave"
+      ],
       "images": {
-        "large": "/drivers/SHBW10000/assets/images/large.png",
-        "small": "/drivers/SHBW10000/assets/images/small.png"
-      }
-    },
-    {
-      "id": "SHHA10000",
-      "name": {
-        "en": "Wireless-Socket",
-        "de": "Funk-Steckdose"
+        "small": "/drivers/SHBW10000/assets/images/small.png",
+        "large": "/drivers/SHBW10000/assets/images/large.png"
       },
       "zwave": {
         "manufacturerId": 1027,
-        "productTypeId": 3,
-        "productId": [
-          3
+        "productTypeId": [
+          2
         ],
-        "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/3144/Manual%20SHHA10000%20EN.pdf",
-        "pid": 3144,
-        "imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-18116297",
-        "learnmode": {
-          "instruction": {
-            "en": "Plug the Wireless-Socket into an outlet. The Status-LED is flashing. Press the Network-Button on the Socket once. The App will show if the Add device process was successful. The Status LED does not flash anymore but indicates if device is switched on or off. Repeat the inclusion process from step B if it was not successful. ",
-            "de": "Stecke den Plug in eine Steckdose. Die Status-LED blinkt. Drücke die Netzwerktaste an dem Plug einmal. Die App zeigt an, ob der Prozess Gerät hinzufügen erfolgreich war. Die Status-LED blinkt nicht mehr, sondern zeigt an, ob das Gerät ein- oder ausgeschaltet ist. Wiederholen den Aufnahmeprozess aus Schritt B, wenn er nicht erfolgreich war."
-          }
-        },
+        "productId": [
+          1
+        ],
+        "zwaveAllianceProductId": 3118,
         "associationGroups": [
           1
         ],
         "associationGroupsOptions": {
           "1": {
             "hint": {
-              "en": "Lifeline. All run-time reporting is addressed to this group. Only one node can be assigned to this association group. \nDefault: 1 (Homey's ID)",
-              "de": "Lifeline. Alle Laufzeitberichte sind an diese Gruppe gerichtet. Dieser Assoziationsgruppe kann nur ein Node zugeordnet werden. \nStandard: 1 (Homey's ID)"
+              "en": "Z-Wave Plus Lifeline 1. Notification Report. Sensor will send Notification Report when Motion Detection Unknown Location and (Event inactive). 2. Multilevel Sensor Report Sensor will send Multilevel Sensor Report (Temperature, humidity, luminance) interval of 2 hours. 3. Battery Report. Sensor will send Battery Report when the battery level is low and the battery report’s value is 0xFF. 4. Device Reset Locally.",
+              "de": "Lifeline. Alle Laufzeitberichte sind an diese Gruppe gerichtet. 1. Notification Report 2. Multilevel Sensor Report (Temperatur, Feuchte, Leuchtdichte) im Intervall von 2 Stunden. 3. Batteriebericht. Der Sensor sendet einen Batteriebericht, wenn der Batteriestand niedrig ist und der Wert für den Batteriebericht 0xFF ist. 4. Gerät lokal zurücksetzen."
             }
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press the Switch Button 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.\nIf add Process is successful, Green LED will turn off.",
+            "de": "Drücke die Schalter-Taste dreimal innerhalb von 1,5 Sekunden, die grüne LED blinkt dreimal innerhalb von 1 Sekunde. Wenn der Vorgang erfolgreich war, erlischt die grüne LED."
           }
         }
       },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "images": {
-        "large": "/drivers/SHHA10000/assets/images/large.png",
-        "small": "/drivers/SHHA10000/assets/images/small.png"
-      }
+      "id": "SHBW10000",
+      "settings": [
+        {
+          "id": "10",
+          "value": 10,
+          "label": {
+            "en": "Low Battery Power Level"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 10,
+            "size": 1
+          },
+          "attr": {
+            "min": 10,
+            "max": 50
+          },
+          "type": "number"
+        },
+        {
+          "id": "100",
+          "value": 0,
+          "label": {
+            "en": "Set 101 ~ 104 to default"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 100,
+            "size": 1
+          },
+          "attr": {
+            "min": 0,
+            "max": 0
+          },
+          "type": "number"
+        },
+        {
+          "id": "101",
+          "value": true,
+          "label": {
+            "en": "The interval time of sending the temperature reporting"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 101,
+            "size": 4
+          },
+          "type": "checkbox"
+        },
+        {
+          "id": "102",
+          "value": true,
+          "label": {
+            "en": "The interval time of sending the humidity reporting."
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 102,
+            "size": 4
+          },
+          "type": "checkbox"
+        },
+        {
+          "id": "103",
+          "value": true,
+          "label": {
+            "en": "The interval time of sending the luminance reporting."
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 103,
+            "size": 4
+          },
+          "type": "checkbox"
+        },
+        {
+          "id": "104",
+          "value": true,
+          "label": {
+            "en": "The interval time of sending the battery level reporting."
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 104,
+            "size": 4
+          },
+          "type": "checkbox"
+        },
+        {
+          "id": "110",
+          "value": false,
+          "label": {
+            "en": "\tEnable 111 ~ 114 temperature/humidity/luminance/ battery level change reporting."
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 110,
+            "size": 1
+          },
+          "type": "checkbox"
+        },
+        {
+          "id": "111",
+          "value": 10,
+          "label": {
+            "en": "Configuration temperature change threshold."
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 111,
+            "size": 2
+          },
+          "attr": {
+            "min": 1,
+            "max": 500
+          },
+          "type": "number"
+        },
+        {
+          "id": "112",
+          "value": 30,
+          "label": {
+            "en": "Configuration humidity change threshold."
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 112,
+            "size": 1
+          },
+          "attr": {
+            "min": 1,
+            "max": 32
+          },
+          "type": "number"
+        },
+        {
+          "id": "113",
+          "value": 150,
+          "label": {
+            "en": "Configuration luminance change threshold."
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 113,
+            "size": 2
+          },
+          "attr": {
+            "min": -32767,
+            "max": -1
+          },
+          "type": "number"
+        },
+        {
+          "id": "114",
+          "value": 10,
+          "label": {
+            "en": "Configuration battery level change threshold."
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 114,
+            "size": 1
+          },
+          "attr": {
+            "min": 1,
+            "max": 100
+          },
+          "type": "number"
+        },
+        {
+          "id": "12",
+          "value": 10,
+          "label": {
+            "en": "Turn on/off PIR + Set Sensitivity"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 12,
+            "size": 1
+          },
+          "attr": {
+            "min": 0,
+            "max": 10
+          },
+          "type": "number"
+        },
+        {
+          "id": "13",
+          "value": 30,
+          "label": {
+            "en": "PIR triggers the waiting time value"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 13,
+            "size": 2
+          },
+          "attr": {
+            "min": 5,
+            "max": 15300
+          },
+          "type": "number"
+        },
+        {
+          "id": "14",
+          "value": false,
+          "label": {
+            "en": "Whether the BASIC SET command is sent after the PIR is triggered"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 14,
+            "size": 1
+          },
+          "type": "checkbox"
+        },
+        {
+          "id": "15",
+          "value": false,
+          "label": {
+            "en": "PIR triggers the correspondence between the value of the Basic set and the PIR state"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 15,
+            "size": 1
+          },
+          "type": "checkbox"
+        }
+      ]
     },
     {
-      "id": "SHMK10000",
+      "id": "SHHA10000",
+      "name": {
+        "en": "Wireless Wallplug",
+        "de": "Funk-Steckdose"
+      },
+      "class": "socket",
+      "capabilities": [
+        "measure_current",
+        "meter_power",
+        "measure_power",
+        "onoff",
+        "measure_voltage"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zwave"
+      ],
+      "images": {
+        "small": "/drivers/SHHA10000/assets/images/small.png",
+        "large": "/drivers/SHHA10000/assets/images/large.png"
+      },
+      "zwave": {
+        "manufacturerId": 1027,
+        "productTypeId": [
+          3
+        ],
+        "productId": [
+          3
+        ],
+        "zwaveAllianceProductId": 3144,
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Z-Wave Plus Lifeline\r\n1. When the state of Smart Plug (turn on or off the load) is changed: 1.Set Configuration parameter 0x03 to 0:Do not send Basic Report 2. Set Configuration parameter 0x03 to 1: Send Basic Report 3. Set Configuration parameter 0x03 to 2: Send Basic Report only when Load condition is changed not by Z-WAVE Command, such as short pressing. 2. Sending Meter Report."
+            }
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press the Switch Button 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.\nIf add Process is successful, Green LED will turn off.",
+            "de": "Drücke die Schalter-Taste dreimal innerhalb von 1,5 Sekunden, die grüne LED blinkt dreimal innerhalb von 1 Sekunde. Wenn der Vorgang erfolgreich war, erlischt die grüne LED."
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "1",
+          "value": true,
+          "label": {
+            "en": "Over current protection"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 1,
+            "size": 1
+          },
+          "type": "checkbox"
+        },
+        {
+          "id": "100",
+          "value": 0,
+          "label": {
+            "en": "Setting the parameters 101~104 to the default value."
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 100,
+            "size": 1
+          },
+          "attr": {
+            "min": 85,
+            "max": 0
+          },
+          "type": "number"
+        },
+        {
+          "id": "101",
+          "value": 0,
+          "label": {
+            "en": "setting time for sending meter report (watt)"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 101,
+            "size": 4
+          },
+          "attr": {
+            "min": 5,
+            "max": 2678400
+          },
+          "type": "number"
+        },
+        {
+          "id": "102",
+          "value": 0,
+          "label": {
+            "en": "setting time for sending meter report (KWh)"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 102,
+            "size": 4
+          },
+          "attr": {
+            "min": 5,
+            "max": 2678400
+          },
+          "type": "number"
+        },
+        {
+          "id": "103",
+          "value": 0,
+          "label": {
+            "en": "setting time for sending meter report (voltage)"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 103,
+            "size": 4
+          },
+          "attr": {
+            "min": 5,
+            "max": 2678400
+          },
+          "type": "number"
+        },
+        {
+          "id": "104",
+          "value": 0,
+          "label": {
+            "en": "setting time for sending meter report (current)"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 104,
+            "size": 4
+          },
+          "attr": {
+            "min": 5,
+            "max": 2678400
+          },
+          "type": "number"
+        },
+        {
+          "id": "16",
+          "value": 0,
+          "label": {
+            "en": "The value represents min. change in wattage (in terms of wattage) for a meter report to be sent"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 16,
+            "size": 2
+          },
+          "attr": {
+            "min": 1,
+            "max": 32767
+          },
+          "type": "number"
+        },
+        {
+          "id": "17",
+          "value": 0,
+          "label": {
+            "en": "The value here represents minimum change in wattage percent (in terms of percentage) for a meter report (watt) to be sent"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 17,
+            "size": 2
+          },
+          "attr": {
+            "min": -128,
+            "max": 127
+          },
+          "type": "number"
+        },
+        {
+          "id": "2",
+          "value": "0",
+          "label": {
+            "en": "Setting device status after power failure\t"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 2,
+            "size": 1
+          },
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Smart Plug memorizes its state after a power failure. (default)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Connected device will be on after the power supply is reconnected."
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Connected device will be off after the power supply is reconnected."
+              }
+            }
+          ],
+          "type": "dropdown"
+        },
+        {
+          "id": "254",
+          "value": false,
+          "label": {
+            "en": "Enable/disable the configuration command"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 254,
+            "size": 1
+          },
+          "type": "checkbox"
+        },
+        {
+          "id": "3",
+          "value": "1",
+          "label": {
+            "en": "Notification when Load status changes"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 3,
+            "size": 1
+          },
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "function is disabled"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "send basic report (default)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Send Basic report only when Load status is not changed by Z-Wave command"
+              }
+            }
+          ],
+          "type": "dropdown"
+        },
+        {
+          "id": "4",
+          "value": false,
+          "label": {
+            "en": "LED Load indicator mode selection"
+          },
+          "hint": {
+            "en": ""
+          },
+          "zwave": {
+            "index": 4,
+            "size": 1
+          },
+          "type": "checkbox"
+        }
+      ]
+    },
+    {
       "name": {
         "en": "Magnetic Contact",
         "de": "Tür-/Fensterkontakt"
@@ -453,14 +955,20 @@
         "alarm_contact",
         "alarm_tamper"
       ],
+      "platforms": [
+        "local"
+      ],
       "energy": {
         "batteries": [
           "CR2"
         ]
       },
+      "connectivity": [
+        "zwave"
+      ],
       "images": {
-        "large": "/drivers/SHMK10000/assets/images/large.png",
-        "small": "/drivers/SHMK10000/assets/images/small.png"
+        "small": "/drivers/SHMK10000/assets/images/small.png",
+        "large": "/drivers/SHMK10000/assets/images/large.png"
       },
       "zwave": {
         "manufacturerId": 1027,
@@ -470,12 +978,6 @@
         "productId": [
           0
         ],
-        "learnmode": {
-          "instruction": {
-            "en": "Press the Tamper-button 3 times within 1.5 seconds and the Status-LED on the base unit front will flash 3 times.",
-            "de": "Drück die Manipulationstaste dreimal innerhalb von 1,5 Sekunden und die Status-LED auf der Vorderseite der Basiseinheit blinkt dreimal."
-          }
-        },
         "zwaveAllianceProductId": 3090,
         "associationGroups": [
           1
@@ -483,36 +985,19 @@
         "associationGroupsOptions": {
           "1": {
             "hint": {
-              "en": "Lifeline association group - Maximum supported node is 1. Include command classes: Battery report, Notification report, and Device Reset Locally notification, Binary report.",
-              "de": "Lifeline-Zuordnungsgruppe - Der maximal unterstützte Node ist 1 und beinhaltet Befehlsklassen: Battery report, Notification report und Device Reset Locally notification, Binary report."
-            }
-          },
-          "2": {
-            "hint": {
-              "en": "Root Device group(Binary Sensor) Binary Sensor Command Class:Compatible with 300 series 1-Binary Sensor reports status of open or close door via Lifeline. 2-When the sensor detects status change between close door and open door, the device will be triggered.",
-              "de": "Root Device group (Binärsensor) Binärsensor Befehlsklasse: Kompatibel mit 300 Serie 1-Binärsensor meldet den Status der geöffneten oder geschlossenen Tür über die Lifeline. 2 - Wenn der Sensor eine Statusänderung zwischen geschlossener und geöffneter Tür erkennt, wird das Gerät ausgelöst."
-            }
-          },
-          "3": {
-            "hint": {
-              "en": "Root Device group(Binary Sensor) Binary Sensor Command Class:Compatible with 300 series 1-Binary Sensor reports the removed status of door sensor. 2-When the sensor detects status change of tamper, the device will be triggered.",
-              "de": "Root Device group(Binärsensor) Binärsensor Befehlsklasse: Kompatibel mit 300 Serie 1 - Binärsensor meldet den entfernt Status des Türsensors. 2 - Wenn der Sensor eine Statusänderung der Manipulation erkennt, wird das Gerät ausgelöst."
-            }
-          },
-          "4": {
-            "hint": {
-              "en": "Root Device group(Notification) 1-Notification report open door or close status via Lifeline. 2- When the sensor detects status change between close door and open door, the device will be triggered.",
-              "de": "Root Device Group(Notification) 1-Notification report wenn Tür oder schließt Status über Lifeline. 2- Wenn der Sensor eine Statusänderung zwischen geschlossener und geöffneter Tür erkennt, wird das Gerät ausgelöst."
-            }
-          },
-          "5": {
-            "hint": {
-              "en": "Root Device group(Notification) 1-Binary Sensor reports the removed status of door sensor. 2- When the sensor detects status change of tamper, the device will be triggered.",
-              "de": "Root Device group(Notification) 1-Binary Sensor meldet den entfernt Status des Türsensors. 2- Wenn der Sensor eine Statusänderung der Manipulation erkennt, wird das Gerät ausgelöst."
+              "en": "Lifeline association group Include command class: Battery report, Notification report, and Device Reset Locally notification, Binary report."
             }
           }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press the Switch Button 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.\nIf add Process is successful, Green LED will turn off.",
+            "de": "Drücke die Schalter-Taste dreimal innerhalb von 1,5 Sekunden, die grüne LED blinkt dreimal innerhalb von 1 Sekunde. Wenn der Vorgang erfolgreich war, erlischt die grüne LED."
+          }
         }
-      }
+      },
+      "id": "SHMK10000",
+      "settings": []
     },
     {
       "id": "SHRM10000",
@@ -521,30 +1006,16 @@
         "nl": "Rookmelder",
         "de": "Rauchmelder"
       },
-      "zwave": {
-        "manufacturerId": [
-          1027
-        ],
-        "productTypeId": [
-          2
-        ],
-        "productId": [
-          3
-        ],
-        "learnmode": {
-          "instruction": {
-            "en": "Press the reset button three times within 1.5 seconds. The led flashes green.",
-            "de": "Drücke die Reset-Taste innerhalb von 1,5 Sekunden dreimal. Die LED blinkt grün."
-          }
-        },
-        "associationGroups": [
-          1
-        ]
-      },
       "class": "sensor",
       "capabilities": [
-        "alarm_smoke",
-        "measure_battery"
+        "measure_battery",
+        "alarm_smoke"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zwave"
       ],
       "energy": {
         "batteries": [
@@ -552,9 +1023,40 @@
         ]
       },
       "images": {
-        "large": "/drivers/SHRM10000/assets/images/large.png",
-        "small": "/drivers/SHRM10000/assets/images/small.png"
-      }
+        "small": "/drivers/SHRM10000/assets/images/small.png",
+        "large": "/drivers/SHRM10000/assets/images/large.png"
+      },
+      "zwave": {
+        "manufacturerId": 1027,
+        "productTypeId": [
+          2,
+          1024
+        ],
+        "productId": [
+          3,
+          2
+        ],
+        "zwaveAllianceProductId": 3089,
+        "learnmode": {
+          "instruction": {
+            "en": "Press the Switch Button 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.\nIf add Process is successful, Green LED will turn off.",
+            "de": "Drücke die Schalter-Taste dreimal innerhalb von 1,5 Sekunden, die grüne LED blinkt dreimal innerhalb von 1 Sekunde. Wenn der Vorgang erfolgreich war, erlischt die grüne LED."
+          }
+        },
+        "associationGroups": [
+          1,
+          2,
+          3
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Association group 1: Lifeline association group Include command classes: Battery report, Notification report, and Device Reset Locally notification, Binary report."
+            }
+          }
+        }
+      },
+      "settings": []
     },
     {
       "id": "SHSG10000",
@@ -562,38 +1064,57 @@
         "en": "Indoor Siren",
         "de": "Innensirene"
       },
+      "class": "other",
+      "capabilities": [
+        "measure_battery",
+        "onoff"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zwave"
+      ],
+      "images": {
+        "small": "/drivers/SHSG10000/assets/images/small.png",
+        "large": "/drivers/SHSG10000/assets/images/large.png",
+        "xlarge": "/drivers/SHSG10000/assets/images/xlarge.png"
+      },
       "zwave": {
         "manufacturerId": 1027,
-        "productTypeId": 3,
+        "productTypeId": [
+          3
+        ],
         "productId": [
           0
         ],
-        "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/3053/Manual%20SHSG10000%20EN.pdf",
-        "pid": 3053,
-        "imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-18096243",
+        "zwaveAllianceProductId": 3053,
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Association group 1: Lifeline association group Include command classes: Switch Binary report ,Battery and Device Reset Locally notification."
+            }
+          }
+        },
         "learnmode": {
           "image": "/drivers/SHSG10000/assets/learnmode.svg",
           "instruction": {
             "en": "Press the Switch Button 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.\nIf add Process is successful, Green LED will turn off.",
             "de": "Drücke die Schalter-Taste dreimal innerhalb von 1,5 Sekunden, die grüne LED blinkt dreimal innerhalb von 1 Sekunde. Wenn der Vorgang erfolgreich war, erlischt die grüne LED."
           }
-        },
-        "associationGroups": [
-          1
-        ]
+        }
       },
-      "class": "other",
-      "capabilities": [
-        "onoff",
-        "measure_battery"
-      ],
-      "images": {
-        "large": "/drivers/SHSG10000/assets/images/large.png",
-        "small": "/drivers/SHSG10000/assets/images/small.png"
-      }
+      "settings": []
     },
     {
-      "id": "SHWM10000",
       "name": {
         "en": "Waterleak Detector",
         "de": "Wassermelder"
@@ -602,17 +1123,23 @@
       "capabilities": [
         "measure_battery",
         "alarm_battery",
-        "alarm_water",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_water"
       ],
       "energy": {
         "batteries": [
           "CR2"
         ]
       },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zwave"
+      ],
       "images": {
-        "large": "/drivers/SHWM10000/assets/images/large.png",
-        "small": "/drivers/SHWM10000/assets/images/small.png"
+        "small": "/drivers/SHWM10000/assets/images/small.png",
+        "large": "/drivers/SHWM10000/assets/images/large.png"
       },
       "zwave": {
         "manufacturerId": 1027,
@@ -622,12 +1149,6 @@
         "productId": [
           2
         ],
-        "learnmode": {
-          "instruction": {
-            "en": "Press the Tamper-button 3 times within 1.5 seconds and the Status-LED on the base unit front will flash 3 times.",
-            "de": "Drück die Manipulationstaste dreimal innerhalb von 1,5 Sekunden und die Status-LED auf der Vorderseite der Basiseinheit blinkt dreimal."
-          }
-        },
         "zwaveAllianceProductId": 3091,
         "associationGroups": [
           1
@@ -635,36 +1156,19 @@
         "associationGroupsOptions": {
           "1": {
             "hint": {
-              "en": "Lifeline association group - Maximum supported node is 1. Include command classes: Battery report, Notification report, and Device Reset Locally notification, Binary report.",
-              "de": "Lifeline-Zuordnungsgruppe - Der maximal unterstützte Node ist 1 und beinhaltet Befehlsklassen: Battery report, Notification report und Device Reset Locally notification, Binary report."
-            }
-          },
-          "2": {
-            "hint": {
-              "en": "Root Device group(Binary Sensor) Maximum supported nodes are 5. Binary Sensor Command Class: Compatible with 300 series 1- Binary Sensor reports status of water or no water via Lifeline. 2- When the sensor detects status change between water and no water, the device will be triggered.",
-              "de": "Root Device group(Binary Sensor) Maximal unterstützte Nodes sind 5. Binäre Sensorbefehlsklasse: Kompatibel mit der 300er Serie 1- Binärsensor meldet den Status von Wasser oder keinem Wasser über die Lifeline. 2- Wenn der Sensor einen Zustandswechsel zwischen Wasser und keinem Wasser erkennt, wird das Gerät ausgelöst."
-            }
-          },
-          "3": {
-            "hint": {
-              "en": "Root Device group(Binary Sensor) Maximum supported nodes are 5. Binary Sensor Command Class:Compatible with 300 series 1-Binary Sensor reports the removed status of water sensor. 2-When the sensor detects status change of tamper, the device will be triggered.",
-              "de": "Root Device group(Binary Sensor) Maximal unterstützte Nodes sind 5. Binärsensor Befehlsklasse: Kompatibel mit 300 Serie 1 - Binärsensor meldet den entfernt Status des Wassersensors. 2 - Wenn der Sensor eine Statusänderung der Manipulation erkennt, wird das Gerät ausgelöst."
-            }
-          },
-          "4": {
-            "hint": {
-              "en": "Root Device group(Notification) Maximum supported nodes are 5. 1-Notification reports reports status of detect water or no water via Lifeline. 2-When the sensor detects status change between water and no water, the device will be triggered.",
-              "de": "Root Device group(Notification) Maximal unterstützte Nodes sind 5. 1-Benachrichtigungsberichte melden den Status von erkanntem Wasser oder keinem Wasser über die Lifeline. 2 - Wenn der Sensor eine Zustandsänderung zwischen Wasser und keinem Wasser erkennt, wird das Gerät ausgelöst."
-            }
-          },
-          "5": {
-            "hint": {
-              "en": "Root Device group(Notification) Maximum supported nodes are 5. 1-Binary Sensor reports the removed status of water sensor. 2- When the sensor detects status change of tamper, the device will be triggered.",
-              "de": "Root Device group(Notification) Maximal unterstützte Nodes sind 5. 1-Binär-Sensor meldet den entfernt Status des Wassersensors. 2- Wenn der Sensor eine Statusänderung der Manipulation erkennt, wird das Gerät ausgelöst."
+              "en": "Association group 1: Lifeline association group - Maximum supported node is 1. Include command classes: Battery report, Notification report, and Device Reset Locally notification, Binary report."
             }
           }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press the Switch Button 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.\nIf add Process is successful, Green LED will turn off.",
+            "de": "Drücke die Schalter-Taste dreimal innerhalb von 1,5 Sekunden, die grüne LED blinkt dreimal innerhalb von 1 Sekunde. Wenn der Vorgang erfolgreich war, erlischt die grüne LED."
+          }
         }
-      }
+      },
+      "id": "SHWM10000",
+      "settings": []
     }
   ]
 }

@@ -3,11 +3,14 @@
 const Homey = require('homey');
 
 class AbusApp extends Homey.App {
-	
-	onInit() {
-		this.log('Abus is running...');
-	}
-	
+
+  /**
+   * onInit is called when the app is initialized.
+   */
+  async onInit() {
+    this.log('AbusApp has been initialized');
+  }
+
 }
 
 module.exports = AbusApp;

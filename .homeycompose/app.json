@@ -1,0 +1,40 @@
+{
+  "id": "com.abus.homey",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "brandColor": "#fc0505",
+  "name": {
+    "en": "ABUS for Homey Pro (2023)",
+    "de": "ABUS for Homey Pro (2023)"
+  },
+  "description": {
+    "en": "Adds support for ABUS Z-Wave devices for Homey Pro (2023)",
+    "de": "Unterstützung für ABUS Z-Wave Geräte für Homey Pro (2023)"
+  },
+  "category": [
+    "security"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "author": {
+    "name": "Sascha Krull",
+    "email": "s.krull@outlook.de"
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "edda132"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://bitbucket.org/athom/com.athom.myapp/issues"
+  }
+}

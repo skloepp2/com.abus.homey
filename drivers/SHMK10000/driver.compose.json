@@ -1,8 +1,7 @@
 {
-  "id": "SHMK10000",
   "name": {
     "en": "Magnetic Contact",
-	"de": "Tür-/Fensterkontakt"
+    "de": "Tür-/Fensterkontakt"
   },
   "class": "sensor",
   "capabilities": [
@@ -11,12 +10,18 @@
     "alarm_contact",
     "alarm_tamper"
   ],
+  "platforms": [
+    "local"
+  ],
   "energy": {
     "batteries": [ "CR2" ]
   },
+  "connectivity": [
+    "zwave"
+  ],
   "images": {
-    "large": "/drivers/SHMK10000/assets/images/large.png",
-    "small": "/drivers/SHMK10000/assets/images/small.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "zwave": {
     "manufacturerId": 1027,
@@ -26,12 +31,6 @@
     "productId": [
       0
     ],
-  "learnmode": {
-    "instruction": {
-      "en": "Press the Tamper-button 3 times within 1.5 seconds and the Status-LED on the base unit front will flash 3 times.",
-	  "de": "Drück die Manipulationstaste dreimal innerhalb von 1,5 Sekunden und die Status-LED auf der Vorderseite der Basiseinheit blinkt dreimal."
-			}
-		},
     "zwaveAllianceProductId": 3090,
     "associationGroups": [
       1
@@ -39,34 +38,15 @@
     "associationGroupsOptions": {
       "1": {
         "hint": {
-          "en": "Lifeline association group - Maximum supported node is 1. Include command classes: Battery report, Notification report, and Device Reset Locally notification, Binary report.",
-		  "de": "Lifeline-Zuordnungsgruppe - Der maximal unterstützte Node ist 1 und beinhaltet Befehlsklassen: Battery report, Notification report und Device Reset Locally notification, Binary report."
-        }
-      },
-      "2": {
-        "hint": {
-          "en": "Root Device group(Binary Sensor) Binary Sensor Command Class:Compatible with 300 series 1-Binary Sensor reports status of open or close door via Lifeline. 2-When the sensor detects status change between close door and open door, the device will be triggered.",
-		  "de": "Root Device group (Binärsensor) Binärsensor Befehlsklasse: Kompatibel mit 300 Serie 1-Binärsensor meldet den Status der geöffneten oder geschlossenen Tür über die Lifeline. 2 - Wenn der Sensor eine Statusänderung zwischen geschlossener und geöffneter Tür erkennt, wird das Gerät ausgelöst."
-        }
-      },
-      "3": {
-        "hint": {
-          "en": "Root Device group(Binary Sensor) Binary Sensor Command Class:Compatible with 300 series 1-Binary Sensor reports the removed status of door sensor. 2-When the sensor detects status change of tamper, the device will be triggered.",
-		  "de": "Root Device group(Binärsensor) Binärsensor Befehlsklasse: Kompatibel mit 300 Serie 1 - Binärsensor meldet den entfernt Status des Türsensors. 2 - Wenn der Sensor eine Statusänderung der Manipulation erkennt, wird das Gerät ausgelöst."
-        }
-      },
-      "4": {
-        "hint": {
-          "en": "Root Device group(Notification) 1-Notification report open door or close status via Lifeline. 2- When the sensor detects status change between close door and open door, the device will be triggered.",
-		  "de": "Root Device Group(Notification) 1-Notification report wenn Tür oder schließt Status über Lifeline. 2- Wenn der Sensor eine Statusänderung zwischen geschlossener und geöffneter Tür erkennt, wird das Gerät ausgelöst."
-        }
-      },
-      "5": {
-        "hint": {
-          "en": "Root Device group(Notification) 1-Binary Sensor reports the removed status of door sensor. 2- When the sensor detects status change of tamper, the device will be triggered.",
-		  "de": "Root Device group(Notification) 1-Binary Sensor meldet den entfernt Status des Türsensors. 2- Wenn der Sensor eine Statusänderung der Manipulation erkennt, wird das Gerät ausgelöst."
+          "en": "Lifeline association group Include command class: Battery report, Notification report, and Device Reset Locally notification, Binary report."
         }
       }
-    }
+    },
+    "learnmode": {
+			"instruction": {
+				"en": "Press the Switch Button 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.\nIf add Process is successful, Green LED will turn off.",
+				"de": "Drücke die Schalter-Taste dreimal innerhalb von 1,5 Sekunden, die grüne LED blinkt dreimal innerhalb von 1 Sekunde. Wenn der Vorgang erfolgreich war, erlischt die grüne LED."
+			}
+		}
   }
 }
