@@ -34,7 +34,6 @@
       }
     }
   },
-  "bugs": {
-    "url": "https://bitbucket.org/athom/com.athom.myapp/issues"
-  }
+  "source": "https://github.com/skloepp2/com.abus.homey",
+  "homeyCommunityTopicId": 112368
 }
