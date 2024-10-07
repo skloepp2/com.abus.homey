@@ -35,6 +35,8 @@
       }
     }
   },
+  "source": "https://github.com/skloepp2/com.abus.homey",
+  "homeyCommunityTopicId": 112368,
   "drivers": [
     {
       "id": "CFA3010",

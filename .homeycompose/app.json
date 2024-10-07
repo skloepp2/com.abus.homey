@@ -1,6 +1,6 @@
 {
-  "id": "com.abus.homey",
-  "version": "1.0.0",
+  "id": "com.abus",
+  "version": "2.0.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -8,24 +8,35 @@
   ],
   "brandColor": "#fc0505",
   "name": {
-    "en": "ABUS for Homey Pro (2023)",
-    "de": "ABUS for Homey Pro (2023)"
+    "en": "ABUS",
+    "de": "ABUS"
   },
   "description": {
-    "en": "Adds support for ABUS Z-Wave devices for Homey Pro (2023)",
-    "de": "Unterstützung für ABUS Z-Wave Geräte für Homey Pro (2023)"
+    "en": "The good feeling of security",
+    "de": "Das gute Gefühl der Sicherheit"
   },
   "category": [
     "security"
   ],
   "permissions": [],
   "images": {
-    "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png"
+    "large": "/assets/images/large.jpg"
   },
   "author": {
     "name": "Sascha Krull",
     "email": "s.krull@outlook.de"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Martin P",
+        "email": "mapulu@t-online.de"
+      },
+      {
+        "name": "Sascha Krull",
+        "email": "s.krull@outlook.de"
+      }
+    ]
   },
   "contributing": {
     "donate": {

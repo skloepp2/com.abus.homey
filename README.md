@@ -9,9 +9,14 @@ Adds support for ABUS Z-Wave devices
 - SHSG10000
 - SHWM10000
 
-This is a port of https://homey.app/de-de/app/com.abus/ABUS/ to the new SDK 3 to add support for Homey Pro (2023).
 Thanks to Martin P! -> https://homey.app/de-de/apps/author/5dcc1c8d63ab870c55c7f8d9/
 
 ## Release notes
+### 2.0.0
+Add support for Homey Pro (2023) -> Upgade SDK to Version 3
+### 1.0.2 
+Added door lock (experimental) Added Homey Energy
+### 1.0.1
+Added new devices
 ### 1.0.0
-Initial port to SDK 3
+Initial version
